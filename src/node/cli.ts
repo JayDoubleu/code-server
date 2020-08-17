@@ -40,6 +40,7 @@ export interface Args extends VsArgs {
   readonly force?: boolean
   readonly "list-extensions"?: boolean
   readonly "install-extension"?: string[]
+  readonly "enable-proposed-api"?: string[]
   readonly "show-versions"?: boolean
   readonly "uninstall-extension"?: string[]
   readonly "proxy-domain"?: string[]
@@ -125,6 +126,7 @@ const options: Options<Required<Args>> = {
   "extra-builtin-extensions-dir": { type: "string[]", path: true },
   "list-extensions": { type: "boolean", description: "List installed VS Code extensions." },
   force: { type: "boolean", description: "Avoid prompts when installing VS Code extensions." },
+  "enable-proposed-api": { type: "string[]", description: "Enable Proposed (beta) API for VS Code extensions by id." },
   "install-extension": {
     type: "string[]",
     description:
